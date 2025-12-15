@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>25216950235_朱火勇</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <video controls autoplay>
+        <source id="source" type="video/mp4">
+    </video>
+
+    <script>
+        const musicId = sessionStorage.getItem('musicId') || '0';
+        const video = document.querySelector('video');
+        const source = document.getElementById('source');
+        
+        source.src = `mp4/video${musicId}.mp4`;
+        video.load();
+    </script>
+</body>
+</html>
